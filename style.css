@@ -37,11 +37,13 @@ body {
 }
 
 /* scree width < 800px */
-@media(max-width:600px){
+@media(max-width:800px){
   #grid {
     display : block;
   }
-
+  #grid ol {
+    border-right:none;
+  }
   h1 {
     border-bottom:1px solid gray;
   }
