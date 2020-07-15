@@ -17,6 +17,20 @@
 
 <body>
   <h1><a href="index.html">뜨거운 감자 - 노래</a></h1>
+  <input type="button" value="밤" onclick="
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  document.querySelector('a').style.color = 'blue';
+  document.querySelector('#grid').style.color = 'green';
+  document.querySelector('#member').style.color = 'red';
+  ">
+  <input type="button" value="낮" onclick="
+  document.querySelector('body').style.backgroundColor= 'white';
+  document.querySelector('body').style.color= 'black';
+  document.querySelector('#grid').style.color = 'black';
+  document.querySelector('a').style.color = 'black';
+  document.querySelector('#member').style.color = 'black';
+  ">
 <div id="grid">
   <ol>
     <li><a href="1.html">청춘</a></li>

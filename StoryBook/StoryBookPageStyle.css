@@ -1,0 +1,68 @@
+  /* #bgimg {
+    background-image:
+    url(pigs1.jpg);
+    background-position : center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+  } */
+  #grid {
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contents {
+    display: inline;
+
+    font-size : 20px;
+    color : black;
+    background-color : white;
+    opacity : 0.8;
+    padding-right: 20px;
+    padding-left: 10px;
+  }
+
+  #story {
+    vertical-align: middle;
+  }
+  #Illustration{
+    padding-right: 30px;
+    text-align: center;
+
+  }
+
+  #Illustrain img{
+      width: 600px;
+  }
+
+  h1{
+    font-size : 20px;
+    text-align : center;
+    margin-bottom : 20px;
+    padding-bottom : 20px;
+    border-bottom : 2px solid gray;
+  }
+  .page {
+    display : block;
+    font-weight : bold;
+    color : black;
+    margin-bottom : 80px;
+  }
+
+  hr{
+    border-top : none;
+    border-bottom : none;
+  }
+
+  /* Images between <hr> tag  */
+
+/**
+top: -2.1em;
+font-size: 1.5em;
+padding: 19px 1.75em;
+background: #fff url(EP.jpg) no-repeat scroll center;
+background-size: 90px 90px;
+height: 50px;
+width: 150px;
+**/
