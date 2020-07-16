@@ -12,25 +12,54 @@
 </script>
   <title>뜨거운 감자 동인 최애곡 모음</title>
   <meta charset="utf-8">
+  <script>
+    function nightDayHandler(self){
+      var target = document.querySelector('body');
+      var target2 = document.querySelector('a');
+      var target3 = document.querySelector('#grid');
+      var target4 = document.querySelector('#member');
+        if(self.value === '밤') {
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          target2.style.color = 'blue';
+          target3.style.color = 'green';
+          target4.style.color = 'red';
+          self.value = '낮';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length){
+            console.log(alist[i]);
+            alist[i].style.color = 'blue';
+            i = i + 1;
+          }
+          } else {
+            target.style.backgroundColor= 'white';
+            target.style.color = 'black';
+            target2.style.color = 'black';
+            target3.style.color = 'black';
+            target4.style.color = 'black';
+            self.value = '밤';
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                console.log(alist[i]);
+                alist[i].style.color = 'powderblue';
+                i = i + 1;
+            }
+          }
+        }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <h1><a href="index.html">뜨거운 감자 - 노래</a></h1>
+
   <input type="button" value="밤" onclick="
-  document.querySelector('body').style.backgroundColor = 'black';
-  document.querySelector('body').style.color = 'white';
-  document.querySelector('a').style.color = 'blue';
-  document.querySelector('#grid').style.color = 'green';
-  document.querySelector('#member').style.color = 'red';
+    nightDayHandler(this);
   ">
-  <input type="button" value="낮" onclick="
-  document.querySelector('body').style.backgroundColor= 'white';
-  document.querySelector('body').style.color= 'black';
-  document.querySelector('#grid').style.color = 'black';
-  document.querySelector('a').style.color = 'black';
-  document.querySelector('#member').style.color = 'black';
-  ">
+
 <div id="grid">
   <ol>
     <li><a href="1.html">청춘</a></li>
@@ -44,4 +73,7 @@
     </ul><br>
   </div>
 </div>
+<input type="button" value="밤" onclick="
+    nightDayHandler(this);
+  ">
 </body>
