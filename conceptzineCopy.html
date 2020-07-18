@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body{
+        line-height: 1.25;
+        color: #555;
+        font-family: 'arial', 'Dotum';
+      }
+      #headerBar {
+        display : flex;
+        height : 70px;
+        border-bottom : 1px solid gray;
+        align-items : center;
+      }
+      #headerBar a{
+        text-decoration : none;
+        color : gray;
+      }
+      #topIn {
+        display : flex;
+        height : 70px;
+        align-items : center;
+        margin-top : 0px;
+        margin-bottom : 0px;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      #topMenu {
+        display : block;
+        width : 940px;
+        margin-top : 0px;
+        margin-bottom : 0px;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      #topMenu ul {
+        display : flex;
+        padding-left : none;
+      }
+      #topMenu li {
+        display : flex;
+        font-size: 12px;
+        padding-left : 60px;
+      }
+      .topDropDown{
+        display : flex;
+
+      }
+      .topSearch {
+        display : flex;
+
+      }
+      #subMenu {
+        display : none;
+      }
+      #contentWrap {
+        width : 1300px;
+        position : relative;
+        clear : both;
+        margin-top : 0px;
+        margin-bottom : 0px;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      #content {
+        margin : 40px auto 0;
+        width : 1300px;
+        min-height : 500px;
+      }
+      #productDetail {
+        margin : 0;
+        padding : 0;
+        display : block;
+        font-size: 12px;
+        padding : 4px 0 1px;
+      }
+      .thumb-info {
+        width : 1300px;
+        padding-top : 30px;
+        padding-bottom : 50px;
+        margin-top : 0px;
+        margin-bottom : 0px;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      .thumb-wrap {
+        float : left;
+        width : 650px;
+        text-align : center;
+      }
+      .info {
+        float : right;
+        width 600px;
+      }
+      .tit-prd {
+        border-bottom : 1 solid #ddd;
+        padding-right : 5px;
+        padding-bottom : 10px;
+      }
+      .table-opt {
+        margin-top : 25px;
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed;
+        word-wrap: break-word;
+        word-break: keep-all;
+      }
+      .table-opt td{
+          padding-top : 4px;
+          padding-bottom : 10px;
+          display: table-cell;
+          vertical-align: inherit;
+      }
+      .tb-left {
+        font-weight : normal;
+        text-align : left;
+      }
+      .price {
+        font-weight: bold;
+        color: #555;
+        font-family: "Lato","arial","Dotum";
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      .table-opt tbody {
+        font-weight : normal;
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed;
+        word-wrap: break-word;
+        word-break: keep-all;
+      }
+      .table-opt caption {
+        display : none;
+      }
+      .tit-prd {
+        padding: 0px 5px 10px 0;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+        font-family: "Lato","arial","Dotum";
+        letter-spacing: 1px;
+        color: #555;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .table-opt th {
+        padding-top : 4px;
+        padding-bottom : 10px;
+      }
+      .opt-wrap {
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px 0;
+      }
+      .opt-wrap dl{
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      dl {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+      .opt-wrap dd {
+        float : left;
+        width : 288px;
+      }
+      dd{
+        display : block;
+        margin-inline-start : 40px;
+      }
+      .opt-wrap dt {
+        float: left;
+        width: 90px;
+        padding-top: 4px;
+      }
+    </style>
+    <title>[Production(20%) 할인 중]</title>
+  </head>
+  <body>
+    <div id="header">
+      <div id="headerBar">
+        <div id="topIn">
+          <div id="topLogo">
+            <a href="#">
+              <img src="https://via.placeholder.com/220x60" alt="로고">
+
+            </a>
+          </div>
+          <!-- topLogo -->
+          <div id="topMenu">
+            <ul>
+              <li id = "firstList">
+                <a href="#">소개</a>
+              </li>
+              <li>
+                <a href="#">콘텐츠</a>
+              </li>
+              <li>
+                <a href="#">컨셉진 쇼핑몰</a>
+              </li>
+              <li>
+                <a href="#">정기구독 고객센터</a>
+              </li>
+              <li>
+                <a href="#">자주 묻는 질문</a>
+              </li>
+            </ul>
+          </div>
+          <!-- topMenue -->
+          <div class="topDropDown">
+            <a href="#">
+            <img src="https://via.placeholder.com/62x70" alt="드랍다운">
+            </a>
+            <div id="subMenu">
+              <div class="left_banner">
+                <div class="title">
+
+                </div>
+                <div class="view">
+
+                </div>
+                <div class="banner">
+
+                </div>
+              </div>
+              <!-- left_banner -->
+              <div class="right_area">
+                <div class="logline">
+                  <ul>
+                    <li class="first">
+                      <img src="https://via.placeholder.com/8x11" alt="">
+                      <a href="#">login</a></li>
+                    <li><a href="#">join us</a></li>
+                    <li><a href="#">cart</a></li>
+                    <li><a href="#">my page</a></li>
+                    <li><a href="#">order</a></li>
+                  </ul>
+                </div>
+                <!--logline -->
+                <div class="board_box">
+                  <div class="commu">
+                    <h2><img src="https://via.placeholder.com/124x28" alt=""></h2>
+                    <ul>
+                      <li><a href="#">- 알려요</a></li>
+                      <li><a href="#">- 상품 배송 및 기타 문의</a></li>
+                      <li><a href="#">- 정기구독 주소 변경 및 문의</a></li>
+                      <li><a href="#">- 후기를 나눠요</a></li>
+                      <li><a href="#">- 컨셉진 읽기</a></li>
+                    </ul>
+                  </div>
+                  <!-- commu -->
+                  <div class="commu">
+                    <h2><img src="https://via.placeholder.com/124x28" alt=""></h2>
+                    <ul>
+                      <li><a href="#">+ bookmark</a></li>
+                      <li><a href="#">+ delivery</a></li>
+                      <li><a href="#">+ wish list</a></li>
+                      <li><a href="#">+ my coupon</a></li>
+                      <li><a href="#">+ my reserve</a></li>
+                    </ul>
+                  </div>
+                  <!-- commu -->
+                  <div class="event_zone">
+                    <div class="">
+                      <a href="#"></a>
+                    </div>
+                    <div class="banner">
+                      <li><a href="#">membership<br><span>회원가입</span></a></li>
+                      <li><a href="#">photo sreview<br><span>리뷰</span></a></li>
+                    </div>
+                    <!-- banner -->
+                  </div>
+                  <!-- event_zone -->
+                </div>
+                <!--board_box-->
+              </div>
+              <!-- right_area -->
+            </div>
+            <!-- subMenu -->
+          </div>
+          <!-- topDropDown -->
+          <div class="topSearch">
+            <a href="#">
+            <img src="https://via.placeholder.com/62x70" alt="검색">
+            </a>
+          </div>
+          <!-- topSearch -->
+        </div>
+        <!-- topIn -->
+      </div>
+    </div>
+    <div id="contentWrap">
+      <div id="content">
+        <div id="productDetail">
+          <div class="pageBody">
+            <div class="thumb-info">
+              <div class="thumb-wrap">
+                <div class="thumb">
+                  <img src="https://via.placeholder.com/650x650" alt="썸네일">
+                </div>
+                <!-- thumb -->
+
+              </div>
+              <!-- thumb-wrap -->
+              <div class="info">
+                  <div class="d-icon">
+                  </div>
+                  <!--.d-icon-->
+                  <div class="tit-prd">
+                    동인이 한 번 입어본 체크 바지
+                  </div>
+                  <!--.tit-prd-->
+                  <div class="table-opt">
+                    <table <summary="판매가격, 적립금, 주문수량, 옵션, 사이즈, 상품조르기, sns">
+                      <caption>상품 옵션</caption>
+                        <colgroup>
+                          <col width="90">
+                          <col width="*">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              <div class="tb-left">판매가</div>
+                            </th>
+                            <td class="price">
+                              <div class="tb-left">
+                                <strike>167,000원</strike>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <div class="tb-left">특별 할인가</div>
+                            </th>
+                            <td class="price">
+                              <div class="tb-left">
+                                <strong>167,000원</strong>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <div class="opt-wrap">
+                                <dl>
+                                  <dt>종류 선택</dt>
+                                  <dd>
+                                    <select name="optionlist[]" onchange="change_option(this, 'basic');" label="종류 선택" opt_type="SELECT" opt_id="1" opt_mix="N" require="Y" opt_mandatory="Y" class="basic_option">
+                                      <option value="">옵션 선택</option>
+                                      <option value="0" title="Tropical 2 mini pouch" matrix="1" price="0" sto_id="0" dis_sto_price="" dis_opt_price="" org_opt_price="0">Tropical 2 mini pouch</option>
+                                      <option value="1" title="Tropical 3 mini pouch" matrix="" price="0" sto_id="0" dis_sto_price="" dis_opt_price="" org_opt_price="0">Tropical 3 mini pouch</option>
+                                      <option value="2" title="Tropical 4 mini pouch" matrix="" price="0" sto_id="0" dis_sto_price="" dis_opt_price="" org_opt_price="0">Tropical 4 mini pouch</option>
+                                      <option value="3" title="Tropical 6 mini pouch" matrix="" price="0" sto_id="0" dis_sto_price="" dis_opt_price="" org_opt_price="0">Tropical 6 mini pouch</option>
+                                      <option value="4" title="Tropical 7 mini pouch" matrix="" price="0" sto_id="0" dis_sto_price="" dis_opt_price="" org_opt_price="0">Tropical 7 mini pouch</option>
+                                    </select>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>수량</dt>
+                                  <dd>
+                                    <div class="opt-btns">
+                                      <input type="text" id="MS_amount_basic_0" name="amount[]" value="1" class="MS_amount_basic" size="4" style="text-align: right; float: left;" onfocusout="set_amount(this, 'basic');">
+                                      <a href="#"></a>
+                                      <a href="#"></a>
+                                    </div>
+                                  </dd>
+                                </dl>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <!--.table-opt-->
+                  <div class="prd-btns">
+                    <a href="#"><img src="https://via.placeholder.com/207x66" alt=""></a>
+                    <a href="#"><img src="https://via.placeholder.com/127x66" alt=""></a>
+                    <a href="#"><img src="https://via.placeholder.com/127x66" alt=""></a>
+                    <a href="#"><img src="https://via.placeholder.com/127x66" alt=""></a>
+                  </div>
+                  <!--.prdbtns-->
+              </div>
+              <!--.info-->
+            </div>
+            <!--.thumb-info-->
+            <div class="detailTitle">
+              <!--#detailTitle-->
+            </div>
+            <!--.detailTitle-->
+            <div class="prd-detail">
+              <!--#prd-detail-->
+            </div>
+            <!--.prd-detail-->
+            <div class="buyGuide">
+              <table>
+
+              </table>
+              <!--#buyGuide-->
+            </div>
+            <!--.buGuide-->
+            <div class="detailTitle">
+              <!--#detailTitle-->
+            </div>
+            <!--.detailTitle-->
+            <div class="table-slide qna-list">
+              <table>
+
+              </table>
+              <!--#table-slide-->
+            </div>
+            <!--.qna-list-->
+            <div class="bordButton">
+              <!--#bordButton-->
+            </div>
+            <ol class="pagingBg">
+            </ol>
+            <!--//상품문의-->
+            <div class="review">
+              <!--#review-->
+            </div>
+            <!--#pageBody-->
+          </div>
+          <!--.pageBody-->
+        </div>
+        <!--#productDetail-->
+      </div>
+      <!--#content-->
+      </div>
+      <!--#contentWrapper-->
+    <div class="footer">
+      <div class="footer-int">
+        <div class="left_box">
+          <div class="title">
+
+          </div>
+          <div class="bottom_line2">
+
+          </div>
+          <div class="call">
+            <ul>
+
+            </ul>
+          </div>
+          <div class="company">
+            <ul>
+
+            </ul>
+          </div>
+          <div class="company_info">
+
+          </div>
+        </div>
+        <div class="right_box">
+          <div class="title">
+
+          </div>
+          <div class="bottom_line2">
+
+          </div>
+          <div class="widget_inner">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logoBox">
+      <div class="logo">
+
+      </div>
+      <div class="sns">
+        <ul>
+
+        </ul>
+      </div>
+    </div>
+    <div class="top_bt">
+      <ul>
+        <li> class="btup" </li>
+        <li> class="btbttom" </li>
+      </ul>
+    </div>
+  </body>
+</html>
