@@ -1,0 +1,129 @@
+body {
+    
+
+}
+
+#wrap {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 10px grey;
+    margin: 200px;
+    width: 800px;
+    height : 800px;
+}
+
+#header {
+    border-radius: 20px 20px 0 0;
+    width : 800px;
+    margin: 0 auto;
+    text-align: center;
+    border : 1px solid black;
+    height : 150px;
+    line-height: 100px;
+}
+
+#content {
+    float: flex;
+    width : 800px;
+    margin : 0 auto;
+    text-align : center;
+    border : 1px solid black;
+    border-top : none;
+    height : 325px;
+}
+
+#main {
+    width : 600px;
+    float : left;
+    height: 325px;
+    margin : 0 auto;
+    text-align : center; 
+    border-bottom : 1px solid black;
+}
+#image {
+    margin: 0 auto;
+    height: 162.5px;
+    padding-left : 0;
+    padding-right : 0;
+    padding-botoom : 30px;
+    padding-top : 81.75px;
+}
+
+#main > #image > img {
+    width: 150px;
+    padding : 10px;
+    transform:rotate(0deg);
+    transition: transform 2s;
+}
+
+#main > #image > img:hover {
+    width: 150px;
+    padding : 10px;
+    transform:rotate(15deg);
+}
+
+#rock {
+    width : 50px;
+}
+
+#aside {
+    position: relative;
+    width : 199px;
+    height : 325px;
+    float : right;
+    margin : 0 auto;
+    text-align : center;
+    border-left : 1px solid black;
+}
+
+#aside > .asideContent {
+    position: absolute;
+    
+    float : none;
+    top: 0;
+    left : 0;
+
+}
+
+#bottom {
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    border : 1px solid black;
+    border-top : none;
+    width : 800px;
+    height : 325px;
+    margin : 0 auto;
+    text-align : center; 
+    line-height: 425px;
+}
+
+#bottom > img {
+    position: absolute;
+    top : 75px;
+    left : 325px;
+    float: none;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.border {
+    
+}
+
+.hide {
+    display: none;
+}
+
+.showing {
+    display : block;
+}
+
+#result {
+    position: absolute;
+    top : 100px;
+    left : 30px;
+    right : 30px;
+    font-size : 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: normal;
+}

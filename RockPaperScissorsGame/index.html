@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>가위, 바위, 보!</title>
+    <link rel="stylesheet" href="rpc.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>안내면 진거 가위! 바위! 보!</h1>
+        </div>
+        <div id="content">
+            <div id="main">
+                <div id="image">
+                    <img class="btns js-btns js-btns_scissors" src="scissors.png" alt="가위">
+                    <img class="btns js-btns_rock" id="rock" src="rock.png" alt="바위">
+                    <img class="btns js-btns_paper border" src="paper.png" alt="보">
+                </div>
+            </div>
+            <div id="aside">
+                <div id="result">
+                    누가 이길까요?
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <img src="scissors.png" class="js-result_scissors hide" alt="가위">
+            <img src="rock.png" class="js-result_rock hide" alt="바위">
+            <img src="paper.png" class="js-result_paper hide" alt="보">
+        </div>
+        <div id="footer"></div>
+        <script src="button.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body{
+    color : #000000ec;
+    background-color: #ffffff;
+    margin : 0;
+}
+.btn {
+    cursor : pointer;
+}
+
+.clicked {
+    color : #e74c3c
+}
+
+.form, .greetings, .btn {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+h1 {
+    font-size : 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#wrap {
+    font-family: sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+#wrap > ul {
+    text-align : left;
+}
+#wrap toDoForm {
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity : 0;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+
+.bgImage {
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    z-index: -1;
+    animation : fadeIn .5s linear;
+    opacity: 70%;
+}
