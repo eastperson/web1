@@ -14,7 +14,7 @@ const btns = document.querySelector(".js-btns"),
 let mySelectNumber = 0;
 let computerSelectNumber = 0;
 
-btns.addEventListener("click", select)
+btns.addEventListener("click", select);
 
 btns_paper.addEventListener("click", selectPaper);
 btns_rock.addEventListener("click", selectRock);

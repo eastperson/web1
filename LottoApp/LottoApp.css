@@ -1,0 +1,118 @@
+.wrap {
+    position: relative;
+    top : 50px;
+    left : 50px;
+    width: 800px;
+    height: 800px;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px black;
+}
+
+.header {
+    position: relative;
+    height: 150px;
+    width : 800px;
+    border-bottom : 1px solid black;
+    text-align: center;
+    line-height: 125px;
+}
+
+.header > h1 {
+    text-align: center;
+}
+
+.contentwrap {   
+    position: relative;
+    height: 325px;
+    width : 800px;
+    border : 0;
+    border-bottom: 1px solid black;
+    margin: 0;
+}
+
+.main {
+    position: relative;
+    height: 325px;
+    width : 600px;
+    float : left;
+    border-right: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 300px;
+}
+
+.main > .no {
+    display: inline-block;
+    border-radius: 50%;
+    width : 70px;
+    height : 70px;
+    padding: 10px;
+    background: #ffff;
+    border : 2px solid red;
+    text-align: center;
+    line-height: 100px;
+    font : 32px Arial, sans-serif;
+}
+
+.main > .btns {
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    right : 20px;
+    line-height: 0;
+}
+.aside {
+    position: relative;
+    height: 325px;
+    width : 199px;
+    float : right;
+    font : 25px Arial, sans-serif;
+}
+
+.aside > .count {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.aside > .result {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+.bottom {
+    position: relative;
+    height: 325px;    
+    text-align: center;
+    line-height: 100px;
+}
+
+.bottom > h2 {
+    margin-bottom: 50px;
+    height: 50px;
+}
+
+.bottom > .no {
+    display: inline-block;
+    border-radius: 50%;
+    width : 70px;
+    height : 70px;
+    padding: 10px;
+    background: #ffff;
+    border : 2px solid red;
+    text-align: center;
+    line-height: 100px;
+    font : 32px Arial, sans-serif;
+}
+
+.showing {
+    display: inline-block;
+}
