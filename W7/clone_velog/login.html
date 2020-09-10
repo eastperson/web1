@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> <!-- content box -->
+        <div class="main"> <!-- main -->
+            <div class="wrapper_register"> <!-- wrap register -->
+                <form id="loginForm" action="clone_velog.html" method="POST">
+                    <fieldset>
+                        <legend class="screen_out">로그인 입력폼</legend>
+                        <div class="box_register"> <!-- register box -->
+                            <h3 class="tit_register">로그인</h3>
+                            <div class="wrap_tf"> <!-- 로그인 입력창 -->
+                                <label for="tfID">아이디</label>
+                                <div id="id_box" class="box_tf state_done">
+                                    <input type="text" name="id" id="tfID" class="tf_write" autocomplete="off" autofocus>
+                                </div>
+                                <em class="emph_txt"></em>
+                            </div>
+                            <div class="wrap_tf">
+                                <label for="tfPW">비밀번호</label>
+                                <div id="id_box" class="box_tf state_done">
+                                    <input type="text" name="id" id="tfPW" class="tf_write" autocomplete="off" autofocus>
+                                </div>
+                                <em class="emph_txt"></em>
+                            </div>
+                            <ul class="list_info">
+                                <li>설명1</li>
+                                <li>설명2</li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                    <button id="btn_submit" type="button" class="btn_follow btn_on">로그인</button>
+                </form> <!-- end form -->
+            </div> <!-- end wrap register -->
+        </div> <!-- end main -->
+    </div> <!-- end content box -->
+</body>
+</html>

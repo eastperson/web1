@@ -1,0 +1,54 @@
+*{
+
+}
+
+.main {
+    padding: 140px 0 120px 0;
+}
+
+#loginForm {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#loginForm > fieldset {
+    display : block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start : 0.35em;
+    padding-inline-start : 0.75em;
+    padding-inline-end : 0.625em;
+    padding-block-start : min-content;
+}
+
+.screen_out {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+.box_register {
+    overflow: hidden;
+    width: 540px;
+    padding: 0 39px 49px;
+    margin : 0 auto 20px;
+    border : 1px solid #e6e6e6;
+    background-color: #fff;
+}
+
+.box_register > h3 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}

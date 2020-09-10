@@ -6,8 +6,9 @@ const number = document.querySelector(".js-no"),
     no4 = document.querySelector("#no4"),
     no5 = document.querySelector("#no5"),
     no6 = document.querySelector("#no6"),
+    RECORDS_LS = 'records',
     SHOWING_ON = "showing";
-
+let countRecord = 0;
 
 const lottoArr = [];
 
@@ -16,7 +17,7 @@ btns.addEventListener("click", show);
 btns.addEventListener("click", record);
 
 function record() {
-    var count = document.getElementById('count').innerText = 1 + "회";
+    var count = document.getElementById('count').innerText = countRecord + "회";
     var result = document.getElementById('result').innerText = 
     lottoArr[0] + " " + 
     lottoArr[1] + " " + 
@@ -28,6 +29,7 @@ function record() {
 
 
 function show(){
+    countRecord++;
     no1.classList.add(SHOWING_ON);
     no2.classList.add(SHOWING_ON);
     no3.classList.add(SHOWING_ON);
@@ -64,3 +66,10 @@ function lotto() {
 
     record();
 }
+
+
+function init() {
+    
+}
+
+init ();

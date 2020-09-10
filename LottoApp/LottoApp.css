@@ -43,16 +43,24 @@
     line-height: 300px;
 }
 
-.main > .no {
-    display: inline-block;
+.main > ol {
+    margin : 0;
+    padding-left : 0;
+    
+}
+
+
+
+.main > ol > li {
     border-radius: 50%;
     width : 70px;
     height : 70px;
     padding: 10px;
+    display: inline-block;
     background: #ffff;
     border : 2px solid red;
     text-align: center;
-    line-height: 100px;
+    line-height: 70px;
     font : 32px Arial, sans-serif;
 }
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="HomePage/jquery.js"></script>
+    <script>
+        $(function() {
+            $("h1").css("color", "blue");   
+        });
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        } 
+        
+        th td {
+            
+            border-collapse: collapse;
+            width: 100%; /* 부모의 전체 크기를 차지 */
+        }
+        th {
+            background-color: cadetblue;
+            text-align: center;
+            max-width: 10%;
+        }
+
+        th, td {
+            height: 30px;
+            padding: 30px;
+            border-bottom: 1px solid black;
+        }
+        td {
+            text-align: left;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        tr:hover {background-color: #666666;}
+    </style>
+</head>
+<body>
+    <h1>테이블</h1>
+    <!-- table>tr>th{title$}*3  -->    
+    <table>
+        <tr>
+            <th>title1</th>
+            <th>title2</th>
+            <th>title3</th>
+        </tr>
+        <tr>
+            <td>description1</td>
+            <td>description2</td>
+            <td>description3</td>
+        </tr>
+        <tr>
+            <td>description1</td>
+            <td>description2</td>
+            <td>description3</td>
+        </tr>
+        <tr>
+            <td>description1</td>
+            <td>description2</td>
+            <td>description3</td>
+        </tr>
+        <tr>
+            <td>description1</td>
+            <td>description2</td>
+            <td>description3</td>
+        </tr>
+        <tr>
+            <td>description1</td>
+            <td>description2</td>
+            <td>description3</td>
+        </tr>
+    </table>
+</body>
+</html>

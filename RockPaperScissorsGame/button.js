@@ -29,7 +29,7 @@ function selectScissors(){
     btns_scissors.classList.add(BORDER_CN);
     computerSelect();
     mySelectNumber = 1;
-    let r =result(mySelectNumber, computerSelectNumber);
+    let r = result(mySelectNumber, computerSelectNumber);
     confirm(r);
 }
 
