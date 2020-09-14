@@ -9,6 +9,9 @@
             width: 50px;
             height: 70px;
         }
+        button{
+            margin-bottom: 15px;
+        }
         #answer{
             border: 1px solid black;
             padding : 10px;
@@ -28,6 +31,29 @@
             height: 30px;
             display: inline-block;
         }
+        #guide {
+            font-family: "맑은고딕";
+            font-size: 10px;
+            font-weight: bold;
+            padding: 10px 30px 3px 30px;
+            text-align: center;
+        }
+        #board {
+            margin: 10px;
+        }
+        [id*=card]{
+            margin: 1px;
+            padding: 1px;
+            transition: transform 2s;
+        }
+        [id*=card]:hover{
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid grey;
+            box-shadow : 3px 3px 5px grey;
+            rotate: 1;
+            transform: rotate(5deg);
+        }
         /*board는 grid로 collumn과 row의 숫자를 정해놓자.*/
     </style>
 </head>
@@ -40,6 +66,7 @@
     <audio controls autoplay>
         <source src="audio/Moonlight_Haze.mp3">
     </audio>
+    <div id="guide">"같은 숫자와 같은 색의 카드를 맞추면 됩니다. ex)다이아몬드 A, 하트 A"</div>
     <div id="board"></div>
 
 
@@ -65,9 +92,10 @@
                 answer = document.querySelector("#answer");
 
             let cardList = board.querySelectorAll("img");
+            
             // test1) 참조가 잘 되었는지 확인
-            console.log(board);
-            console.log(cardList);
+            //console.log(board);
+            //console.log(cardList);
 
             // 2. 이벤트소스에 이벤트를 등록한다.
             // 2-1. showAll, hideAll, shuffle 버튼을 클릭하면 함수를 호출한다.
@@ -88,6 +116,7 @@
                     flipCard(this);
                 }
             }
+
         }
 
         // 5.모든 카드를 보여준다.(앞면이 보이게 한다.)
