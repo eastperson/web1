@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="sports">전체
+    <input type="checkbox" name="sports" value="야구">야구
+    <input type="checkbox" name="sports" value="농구">농구
+    <input type="checkbox" name="sports" value="축구">축구
+    <input type="checkbox" name="sports" value="배구">배구 <br>
+    <textarea name="sportsList" id="ta" cols="30" rows="10"></textarea>
+    <script>
+        window.onload = function () {
+            // name이 sports인 요소들을 저장한다.(0번째 인덱스는 전체체크용)
+            let sports = document.getElementsByName("sports")
+            let sportsTA = document.getElementById("ta")
+            // 전체체크박스의 onclick 이벤트
+            sports[0].onclick = function () {
+                // 1.다른요소들을 전체체크박스의상태와 일치시킨다.
+                allCheck(sports);
+                // 2.textarea의 내용을 checkbox가 선택된 요소들의 value값으로 바꾼다.
+                sportsTA.innerText = selectedBox(sports);
+            }
+            // 야구 checkbox onclick 이벤트
+
+            for(let i = 1; i < sports.length; i++){
+                sports[i].onclick = function () {
+                sportsTA.innerText = selectedBox(sports);
+            }
+            }
+        }
+        function allCheck(sports) {
+            // 전체 체크박스의 상태를 변수에 저장
+            let allCheckbox = sports[0].checked
+            // 다른 요소들을 전체체크박스의 상태와 일치시킨다.
+            for (i = 1; i < sports.length; i++) {
+                sports[i].checked = allCheckbox
+            }
+
+        }
+        function selectedBox(sports) {
+            //반환되는 리스트
+            let selectedBox = [];
+            for (i = 1; i < sports.length; i++) {
+                // 배열의 요소의 checked가 true이면
+                if (sports[i].checked) {
+                    // 반환되는 리스트에 저장한다.
+                    selectedBox.push(sports[i].value);
+                }
+            }
+            return selectedBox;
+        }
+    </script>
+</body>

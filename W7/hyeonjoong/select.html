@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 80px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="leftBox" multiple>
+        <option value="">야구</option>
+        <option value="">축구</option>
+        <option value="">농구</option>
+        <option value="">배구</option>
+        <option value="">탁구</option>
+    </select>
+    <button id="left">&gt;</button>
+    <button id="right">&lt;</button>
+    <button id="leftAll">&gt;&gt;</button>
+    <button id="rightAll">&lt;&lt;</button>
+    <select name="" id="rightBox" multiple="multiple"></select>
+    <script>
+        window.onload = function () {
+            // 1.select의 element를 가져온다.
+            let rBox = document.getElementById("rightBox");
+            let lBox = document.getElementById("leftBox");
+            // 2. >버튼 onclick 이벤트
+            document.getElementById("left").onclick = function () {
+                // lBox에서 rBox로 선택된 옵션을 옮긴다.(op는 값을 주지않음.)
+                optionsMove(lBox, rBox);
+                // selectedMove(lBox,rBox);
+            }
+            document.getElementById("right").onclick = function () {
+                optionsMove(rBox, lBox)
+                // selectedMove(rBox,lBox)
+            }
+            // 3. >>버튼 onclick이벤트
+            document.getElementById("leftAll").onclick = function () {
+                // lbox 에서 rbox로 모든 옵션을 옮긴다.(op값에 true를 준다.)
+                optionsMove(lBox, rBox, true)
+                // allMove(lBox,rBox)
+            }
+            document.getElementById("rightAll").onclick = function () {
+                optionsMove(rBox, lBox, true)
+                // allMove(rBox,lBox)
+            }
+        }
+        // from에서 to로 선택된option을 옮긴다. (op에 true를 주면 모든 옵션을 옮긴다.)
+        function optionsMove(from, to, op) {
+            // 1-1. 리스트에 fromBox에 선택된 옵션들을 저장한다(op값이 없을때).
+            let options = from.selectedOptions;
+            // 1-2. op값이 true로 주어지면 리스테에 모든 옵션들을 할당.
+            if (op === true) {
+                options = from.options;
+            }
+            for (i = options.length; i >= 0; i--) {
+                // 2. 선택된 옵션들을 toBox에 옮긴다.
+                to.append(options[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!-- >> 버튼을 누르면 왼쪽의 <select>에 모든<option>이 오른쪽 <select>로 이동
+> 버튼을 누르면 왼쪽 <select>에서 선택된 <option>들만 오른쪽 <select>로 이동
+<< 버튼을 누르면 오른쪽의 <select>에 모든<option>이 왼쪽 <select>로 이동
+< 버튼을 누르면 오른쪽의 <select>에 선택된 <option>들만 왼쪽 <select>로 이동 -->

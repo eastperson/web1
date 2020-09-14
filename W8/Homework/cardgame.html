@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <style>
+        img{
+            width: 50px;
+            height: 70px;
+        }
+        #answer{
+            border: 1px solid black;
+            padding : 10px;
+            width: 100px;
+            height: 30px;
+            color : blue;
+            font-size: 15px;
+            text-align: center;
+            display: inline-block;
+        }
+        #answer > h3{
+            padding: 0;
+            margin: 0;
+        }
+        audio{
+            width: 300px;
+            height: 30px;
+            display: inline-block;
+        }
+        /*board는 grid로 collumn과 row의 숫자를 정해놓자.*/
+    </style>
+</head>
+<body>
+    
+    <button id="showAll">show All</button>
+    <button id="hideAll">hide All</button>
+    <button id="shuffle">shuffle</button><br>
+    <div id="answer"></div>
+    <audio controls autoplay>
+        <source src="audio/Moonlight_Haze.mp3">
+    </audio>
+    <div id="board"></div>
+
+
+    <script>
+        let tmp = '';
+        for(let i = 1; i <= 52; i++){
+                 tmp +=  '<img src="img/back.jpg" id="card'+i.toString()+'">';       
+        }
+        console.log(tmp);
+        board.innerHTML = tmp;
+        
+        window.onload = function(){
+
+            
+
+            // 1. 요소에 대한 참조를 얻는다.
+            // 1-1. board element를 가져와서 layout을 잡는다.
+            // 1-2. 각 card는 board element의 자식 element 배열을 사용한다.
+            const board = document.querySelector("#board"),
+                showAll_btn = document.querySelector("#showAll"),
+                hideAll_btn = document.querySelector("#hideAll"),
+                shuffle_btn = document.querySelector("#shuffle"),
+                answer = document.querySelector("#answer");
+
+            let cardList = board.querySelectorAll("img");
+            // test1) 참조가 잘 되었는지 확인
+            console.log(board);
+            console.log(cardList);
+
+            // 2. 이벤트소스에 이벤트를 등록한다.
+            // 2-1. showAll, hideAll, shuffle 버튼을 클릭하면 함수를 호출한다.
+            showAll_btn.onclick = () => {showAll(cardList);};
+            hideAll_btn.onclick = () => {hideAll(cardList);};
+            shuffle_btn.onclick = () => {cardList = shuffle(cardList, board);};
+
+
+            // 2-2. 각 카드를 클릭했을 때, 뒤집는 이벤트를 호출한다.
+            for(let i = 0; i < cardList.length; i++){
+                cardList[i].onclick = function () {
+                    if(flippedCards.length == 2){
+                        return;
+                    }
+                    // test2) click한 카드에 onclick 이벤트가 등록되었는지 확인
+                    console.log(this.id)
+                    // tets5)open 함수가 잘 들어왔는지 확인
+                    flipCard(this);
+                }
+            }
+        }
+
+        // 5.모든 카드를 보여준다.(앞면이 보이게 한다.)
+        function showAll(cardList) {
+            console.log(cardList); // test3-1) showAll 버튼이 잘 눌렸는지
+            for(let i = 0; i < cardList.length; i++){
+                open(cardList[i]);
+                console.log(cardList[i].id +" open!")
+            }
+        }
+
+
+
+        // 6.모든 카드를 덮는다. (뒷면이 보이게 한다.)
+        function hideAll(cardList) {
+            console.log(cardList); // test3-2) hideAll 버튼이 잘 눌렸는지
+            for(let i = 0; i < cardList.length; i++){
+                hide(cardList[i]);
+                console.log(cardList[i].id +" hide!")
+            }
+        }
+
+
+        // 7.카드의 순서를 뒤섞는다.
+        function shuffle(cardList, board) {
+            console.log(cardList); // test 3-3) shuffle 버튼이 잘 눌렸는지
+            for(let i = 0; i < cardList.length*2; i++){
+                idx = Math.floor(Math.random()*25);
+                board.appendChild(cardList[idx]);
+                cardList = board.querySelectorAll("img");
+            }
+            console.log(cardList);
+            return cardList;
+        }
+
+        let flippedCards = [];
+
+        
+        // 4.hide 함수는 여러곳에서 사용될 수 있다.
+        function hide(selectCard) {
+            selectCard.src = "img/back.jpg"
+            selectCard.className = "hidedCard";
+        }
+
+        
+        // 3.선택한 카드는 앞면을 공개한다.
+        function open(selectCard) {
+                if(selectCard.className === "openedCard"){
+                    console.log("이미 오픈")
+                    return;
+                }
+                tmp = selectCard.id;
+                tmp = tmp.substring(4,tmp.length);
+                tmp = parseInt(tmp);
+                selectCard.src = "img/card_img/"+(tmp-1).toString()+".png"; // post1)는 각 카드에 맞는 이미지로 변경
+                console.log(selectCard.id+" open!"); // test4) 오픈이 잘되었는지 확인   
+                selectCard.className = "openedCard";
+        }
+
+        // 8. 카드를 뒤집는다
+        // 8-1. 뒤집힌 카드를 flippedCards 배열에 담아준다.
+        function flipCard(selectCard) {
+            console.log(selectCard.id + "flip!");
+            open(selectCard);
+            // 클릭한 카드를 앞면으로 돌리기
+            // 뒤집어진 카드를 flippedCards 배열에 담기
+            // 뒤집어진 카드가 처음에 선택한 카드면 return
+            if(selectCard === flippedCards[0]){
+                console.log("flip 같은 카드!")
+                return;
+            }
+            flippedCards.push(selectCard);
+            console.log(flippedCards);
+            console.log(flippedCards.length);
+            if(flippedCards.length == 2){ // 뒤집힌 카드가 2장이면 
+                setTimeout(() => {
+                    console.log(flippedCards)
+                    checkCards(flippedCards[0],flippedCards[1])
+                    flippedCards.splice(0,2); // flippedCards reset
+                },1000);
+            } 
+        }
+
+        // 9. 첫번째 뒤집은 카드와 두번째 뒤집은 카드와 같은지 확인한다.
+        // 처음에 뒤집은 카드와 두번째 뒤집은 카드가 같으면 true 반환
+        // 둘이 다르면 false 반환
+        function checkCards(firstCard, secondCard) {
+                console.log(firstCard);
+                tmp1 = firstCard.id;
+                tmp1 = tmp1.substring(4,tmp1.length);
+                tmp1 = parseInt(tmp1);
+                console.log(tmp1);
+                console.log(secondCard);
+                tmp2 = secondCard.id;
+                tmp2 = tmp2.substring(4,tmp2.length);
+                tmp2 = parseInt(tmp2);
+                console.log(tmp2);
+                console.log(tmp1 - tmp2);
+                console.log("check!!");
+                if(tmp1 - tmp2 === 26 || tmp1 - tmp2 === -26){
+                    answer.innerHTML = "<h3>정답</h3>"
+                } else {
+                    answer.innerHTML = "<h3>오답</h3>"
+                    hide(firstCard);
+                    hide(secondCard);
+                }
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox</title>
+    <style>
+        textarea{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>김동인</h1>
+    <input type="checkbox" id="allCheckBox" class="content">전체
+    <input type="checkbox"><span class="content">야구</span>
+    <input type="checkbox"><span class="content">농구</span>
+    <input type="checkbox"><span class="content">축구</span>
+    <input type="checkbox"><span class="content">배구</span> <br>
+    <textarea name="sportsList" cols="30" rows="10"></textarea>
+    
+    <script>
+        window.onload = function() {
+        /*Element const 변수에 담기 */
+        const checkAllBox = document.getElementById("allCheckBox"),
+            allBox = document.getElementsByTagName("input"),
+            contents = document.getElementsByClassName("content"),
+            textareas = document.getElementsByTagName("textarea");
+
+
+        /*전체 체크 및 체크 해제 함수 만들기 */
+        let checkAll = function () {
+            for(let j = 1; j < allBox.length; j++)
+                allBox[j].checked = allBox[0].checked;
+            innerText(); /*innerText 함수 사용*/
+        };
+
+        /*만일 전체[] 외의 모든 체크박스가 true일때, 전체[]도 true. 역도 성립*/
+        let remainderBox = function () {
+            allBox[0].checked =true;
+            for(let i = 1; i < allBox.length; i++){
+                if(!allBox[i].checked) /*체크가 안된 박스가 1개라도 있다면*/
+                    allBox[0].checked = false;
+            }
+        }
+
+        /*textArea에 innerText 함수*/
+        let innerText = function() {
+            let text = "";  /*text를 동적으로 담아내기 위해 변수 생성*/
+            for(let i = 1; i < allBox.length; i++){
+                if(allBox[i].checked){ 
+                    if(!(text.length === 0)) /*비어있는 텍스트가 아닐 때*/
+                        text += ",";
+                    text += contents[i].textContent;
+                }
+            }
+            textareas[0].innerText = text;
+            remainderBox();
+        }
+        
+        /*이벤트 호출*/
+        checkAllBox.addEventListener("change", checkAll);
+        for(let i = 1; i < allBox.length; i++)
+            allBox[i].addEventListener("change", innerText);
+        }
+    </script>
+</body>
+</html>

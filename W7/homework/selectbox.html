@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width : 80px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>김동인</h1>
+    <select name="" id="leftBox" multiple="multiple">
+        <option>야구</option>
+        <option>축구</option>
+        <option>농구</option>
+        <option>배구</option>
+        <option>탁구</option>
+    </select>
+    <button id="leftAll">>></button>
+    <button id="left">></button>
+    <button id="right"><</button>
+    <button id="rightAll"><<</button>
+    <select id="rightBox" multiple="multiple"></select>
+    <script>
+        window.onload = function() {
+        /*버튼 선택자, 박스 선택자*/
+        const left_btn = document.querySelector("#left"),
+            leftAll_btn = document.querySelector("#leftAll"),
+            right_btn = document.querySelector("#right"),
+            rightAll_btn = document.querySelector("#rightAll"),
+            rightBox = document.querySelector("#rightBox"),
+            leftBox = document.querySelector("#leftBox");
+        
+        /*move 함수(선택한 박스 엘리먼트, 반대쪽 박스 엘리먼트, All버튼인지) <- 인자값 */
+        let move = function(selectedBox, counterBox, isAll) {
+            for(let i = 0; i < selectedBox.options.length; i++){ /*box의 자식관계인 모든 option 선택*/
+                if(isAll || selectedBox.options[i].selected === true){ /*isAll이 true 인지 먼저 확인 후 false 이면 selected 확인*/
+                    counterBox.innerHTML += "<option>"+selectedBox.options[i].innerText+"</option>";
+                    selectedBox.options[i].remove();
+                    i = -1;
+                }
+            }
+        }
+
+        /*이벤트 호출*/
+        left_btn.addEventListener("click", () => {move(leftBox, rightBox);});
+        leftAll_btn.addEventListener("click", () => {move(leftBox, rightBox, true);});
+        right_btn.addEventListener("click", () => {move(rightBox, leftBox);});
+        rightAll_btn.addEventListener("click", () => {move(rightBox, leftBox, true);});
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        select {
+            width: 80px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="leftBox" multiple>
+        <option value="">야구</option>
+        <option value="">축구</option>
+        <option value="">농구</option>
+        <option value="">배구</option>
+        <option value="">탁구</option>
+    </select>
+    <button id="leftAll">>></button>
+    <button id="left">></button>
+    <button id="right"><</button>
+    <button id="rightAll"><< </button>
+    <select name="" id="rightBox" multiple="multiple">
+
+    </select>
+    <script>
+        window.onload = function(){
+            // 1. 요소에 대한 참조를 얻어온다.
+            let leftBox = document.getElementById("leftBox");
+            let rightBox = document.getElementById("rightBox");
+            let btnArr = document.getElementsByTagName("button");
+
+            // 2. 이벤트 등록
+            for(let i = 0; i < btnArr.length; i++)
+                btnArr[i]=document.getElementsByTagName("button");
+        }
+
+        function btnClick() {
+            let btnArr = document.getElementsByTagNameNS("button");
+
+            switch (this) {
+                case btnArr[0]:
+                    //left에서 right로 option을 모두 옮긴다.
+                    // 1. leftBox의 모든 option을 전부 선택한다.
+                    // 2. leftBox의 선택된 option을
+                    moveAllOption(leftBox, rightBox);
+                    break;
+                case btnArr[1] :
+                    // Right에서 Left로 선택된 option을 모두 옮긴다.
+                    moveSelectedOption(leftBox, rightBox);
+                    break;
+                case btnArr[2] :
+                    // Right에서 Left로 선택된 option을 모두 옮긴다.
+                    moveSelectedOption(rightBox, leftBox);
+                    break;
+                case btnArr[3] :
+                    // Right에서 Left로 option을 모두 옮긴다.
+                    moveAllOption(leftBox, rightBox);
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

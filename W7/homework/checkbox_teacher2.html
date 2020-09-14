@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+​
+
+<html lang="en">
+
+​
+
+<head>
+
+​
+
+<meta charset="UTF-8">
+
+​
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+​
+
+<title>Document</title>
+
+​
+
+</head>
+
+​
+
+<body>
+
+​
+
+<input type="checkbox" value="All">전체
+
+<input type="checkbox" value="야구">야구
+
+<input type="checkbox" value="농구">농구
+
+<input type="checkbox" value="축구">축구
+
+<input type="checkbox" value="배구">배구 <br>
+
+<textarea name="sportsList" id="ta" cols="30" rows="10"></textarea>
+
+<!--script src=""--> <!-- src=""가 있으면 스크립트가 실행되지 않음. -->
+
+<script>
+
+var inputArr;
+
+​
+
+window.onload = function() {
+
+// 1. input에 대한 참조를 얻는다.
+
+inputArr = document.getElementsByTagName("input");
+
+​
+
+// 2. input에 이벤트를 등록한다.
+
+for(let i=0;i<inputArr.length;i++)
+
+inputArr[i].onclick = inputClick; 
+
+}
+
+​
+
+function setTextToTa(inputArr) {
+
+let ta = document.getElementById("ta")
+
+let tmp = ""
+
+​
+
+for(let i=1;i<inputArr.length;i++)
+
+if(inputArr[i].checked)
+
+tmp += inputArr[i].value + ","
+
+​
+
+ta.value = tmp
+
+}
+
+​
+
+function inputClick(e) {
+
+// console.dir(e)
+
+// if(e.srcElement==inputArr[0]) {
+
+if(this==inputArr[0]) {
+
+for(let i=1;i<inputArr.length;i++)
+
+inputArr[i].checked = inputArr[0].checked;
+
+}
+
+setTextToTa(inputArr);
+
+}
+
+</script>
+
+</body>
+
+</html>

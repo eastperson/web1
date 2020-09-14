@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" value="ALL">전체
+    <input type="checkbox" value="야구">야구
+    <input type="checkbox" value="농구">농구
+    <input type="checkbox" value="축구">축구
+    <input type="checkbox" value="배구">배구 <br>
+    <textarea name="sportsList" id="" cols="30" rows="10" id="ta"></textarea>
+    <!--script src=""--> <!-- src=""가 있으면 스크립트가 실행되지 않음. -->
+    <script>
+        /*HTML 페이지가 모두 load된 후에 발생하는 이벤트
+        이 코드는 HTML 페이지가 완전히 load된 후에 실행된다.
+        */
+        window.onload = function() {
+            // 1. 원하는 element에 대한 참조를 얻어와야 한다.
+            // 페이지에 있는 모든 <input>에 대한 참조를 얻는다.
+            let inputArr = document.getElementsByTagName("input");
+
+            // 2. 이벤트 등록 - 이벤트 소스와 이벤트 핸들러의 연결
+            // 이벤트 소스 - 이벤트가 발생한 element
+            // 이벤트 핸들러 - 이벤트가 발생했을 때 수행될 코드
+            for(let i = 0; i < inputArr.length; i++)
+                inputArr[0].onclick = inputClick;
+
+        }
+
+        function setTextToTa(inputArr) {
+            let ta = document.getElementById("ta");
+                    let tmp = "";
+
+                    for(let i = 1; i < inputArr; i++){
+                        if(inputArr[i].checked){
+                            ta.value += value +",";
+                        }
+                    }
+                    ta.value += tmp;
+        }
+            // 이벤트 or 기능을 하나하나 만들면서 계속 테스트해야한다.
+            function inputClick(e) {
+                console.dir(e)
+                let inputArr = document.getElementsByTagName('input');
+                // 1. 전체를 클릭한 경우
+                // 1.1 모든 체크박스를 체크/체크 해제한다.
+                
+                if(this === inputArr[0]){   //전체를 클릭한 경우
+                    for(let i = 1; i < inputArr.length; i++){
+                        inputArr[i].checked = inputArr[0].checked;
+                    }
+                }
+
+                // 1. 클릭한 체크박스의 값을 얻는다.
+                let value = this.value;
+                // let value = e.srcElment.value;
+
+                // 2. 체크박스 값을 textarea에 저장한다.
+                setTextArea(inputArr);
+                
+                function setTextArea(inputArr) {
+                    let ta = document.getElementById("ta");
+                    let tmp = "";
+
+                    for(let i = 1; i < inputArr; i++){
+                        if(inputArr[i].checked){
+                            ta.value += value +",";
+                        }
+                    }
+                    ta.value += tmp;
+                }
+                
+            }
+    </script>
+</body>
+</html>
